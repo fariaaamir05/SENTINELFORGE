@@ -1,0 +1,19 @@
+title: Suspicious PowerShell command
+id: SF-002
+status: experimental
+severity: high
+description: PowerShell invoked with download, encoded, or bypass patterns.
+mitre:
+  technique_id: T1059.001
+detection:
+  kind: keyword
+  process_contains: [powershell, pwsh]
+  command_contains_any:
+    - invoke-webrequest
+    - invoke-expression
+    - iex
+    - downloadstring
+    - bypass
+    - -nop
+    - hidden
+    - net.webclient

@@ -1,0 +1,15 @@
+title: Encoded PowerShell
+id: SF-003
+status: experimental
+severity: critical
+description: PowerShell launched with encoded command flags.
+mitre:
+  technique_id: T1027
+detection:
+  kind: keyword
+  process_contains: [powershell, pwsh]
+  command_contains_any:
+    - -enc
+    - -encodedcommand
+    - -ec
+    - frombase64string

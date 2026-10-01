@@ -1,0 +1,14 @@
+title: Web scanning or repeated 404 requests
+id: SF-005
+status: experimental
+severity: medium
+description: Same source IP generating many HTTP 404 responses, typical of scanning.
+mitre:
+  technique_id: T1595
+detection:
+  kind: threshold
+  field: status_code
+  equals: "404"
+  group_by: [src_ip]
+  count: 8
+  timeframe_events: 200

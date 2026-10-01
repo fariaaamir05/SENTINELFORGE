@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SentinelForge Case {{ case.id }}</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; margin: 24px; color: #111; }
+    .meta { background: #f4f6f8; padding: 12px; border-radius: 8px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+    th, td { border: 1px solid #ccc; padding: 8px; vertical-align: top; }
+    th { background: #1f4e79; color: #fff; }
+    pre { white-space: pre-wrap; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>SentinelForge Investigation Report</h1>
+  <div class="meta">
+    <p><strong>Case ID:</strong> {{ case.id }}</p>
+    <p><strong>Title:</strong> {{ case.title }}</p>
+    <p><strong>Status:</strong> {{ case.status }}</p>
+    <p><strong>Notes:</strong> {{ case.notes }}</p>
+  </div>
+  <h2>Alerts</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Rule</th>
+        <th>Severity</th>
+        <th>Host / IP</th>
+        <th>MITRE</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for alert in alerts %}
+      <tr>
+        <td>{{ alert.id }}</td>
+        <td>{{ alert.rule_name }}</td>
+        <td>{{ alert.severity }}</td>
+        <td>{{ alert.host }} / {{ alert.src_ip }}<br />{{ alert.timestamp }}</td>
+        <td>{{ alert.mitre }}</td>
+        <td><pre>{{ alert.evidence }}</pre></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

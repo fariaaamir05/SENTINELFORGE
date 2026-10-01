@@ -1,0 +1,14 @@
+title: Repeated failed login attempts
+id: SF-001
+status: experimental
+severity: high
+description: Multiple failed logon events from the same host or source IP.
+mitre:
+  technique_id: T1110
+detection:
+  kind: threshold
+  field: failed_login
+  equals: true
+  group_by: [src_ip, host, user]
+  count: 5
+  timeframe_events: 50

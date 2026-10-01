@@ -1,0 +1,20 @@
+[
+  {
+    "UtcTime": "2026-03-01T09:00:00Z",
+    "Computer": "WS-HR-02",
+    "EventID": 1,
+    "Image": "C:\\\\Windows\\\\System32\\\\notepad.exe",
+    "CommandLine": "notepad.exe C:\\\\Users\\\\bob\\\\notes.txt",
+    "ParentImage": "C:\\\\Windows\\\\explorer.exe",
+    "User": "bob"
+  },
+  {
+    "UtcTime": "2026-03-01T09:01:00Z",
+    "Computer": "WS-HR-02",
+    "EventID": 1,
+    "Image": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+    "CommandLine": "powershell.exe Get-Date",
+    "ParentImage": "C:\\\\Windows\\\\explorer.exe",
+    "User": "bob"
+  }
+]

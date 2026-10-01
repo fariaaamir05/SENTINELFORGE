@@ -1,0 +1,30 @@
+{
+  "source": "local curated MITRE ATT&CK mapping for SentinelForge detections",
+  "techniques": [
+    {
+      "technique_id": "T1110",
+      "name": "Brute Force",
+      "tactic": "Credential Access"
+    },
+    {
+      "technique_id": "T1059.001",
+      "name": "Command and Scripting Interpreter: PowerShell",
+      "tactic": "Execution"
+    },
+    {
+      "technique_id": "T1027",
+      "name": "Obfuscated Files or Information",
+      "tactic": "Defense Evasion"
+    },
+    {
+      "technique_id": "T1566.001",
+      "name": "Phishing: Spearphishing Attachment",
+      "tactic": "Initial Access"
+    },
+    {
+      "technique_id": "T1595",
+      "name": "Active Scanning",
+      "tactic": "Reconnaissance"
+    }
+  ]
+}

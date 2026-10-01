@@ -1,0 +1,13 @@
+"""Accuracy notes for Member 1 detections.
+
+True positives expected from samples/sysmon_malicious.json and samples/nginx_access.log:
+- Five failed 4625 events from 10.0.0.21 -> Repeated failed login attempts
+- PowerShell DownloadString / IEX -> Suspicious PowerShell command
+- -EncodedCommand -> Encoded PowerShell
+- WINWORD spawning PowerShell -> Office application spawning PowerShell or CMD
+- Eight 404s from 203.0.113.10 -> Web scanning or repeated 404 requests
+
+False positive check:
+- samples/sysmon_benign.json uses notepad and `powershell Get-Date` without suspicious flags.
+  The suspicious PowerShell rule requires download/bypass/hidden keywords, so Get-Date should not alert.
+"""

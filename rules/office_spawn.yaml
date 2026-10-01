@@ -1,0 +1,22 @@
+title: Office application spawning PowerShell or CMD
+id: SF-004
+status: experimental
+severity: high
+description: Word, Excel, or Outlook launching a command interpreter.
+mitre:
+  technique_id: T1566.001
+detection:
+  kind: parent_child
+  parent_contains:
+    - winword
+    - excel
+    - outlook
+    - powerpnt
+    - msaccess
+  child_contains:
+    - powershell
+    - pwsh
+    - cmd.exe
+    - cmd
+    - wscript
+    - cscript
